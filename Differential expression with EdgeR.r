@@ -1,6 +1,8 @@
 ```{r}
 ## Load in the library
 library(edgeR)
+# read in count dataset
+Samples <- as.matrix(read.csv("hervK_samples.csv"))
 ## Change Column names
 colnames(Samples)<- c("1N","1T","2N","2T","3N","3T","4N",
 "4T","5N","5T","6N","6T","7N","7T","8N","8T","9N","9T","10N","10T",

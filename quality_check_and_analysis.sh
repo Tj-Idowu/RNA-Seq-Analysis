@@ -1,5 +1,17 @@
+# Quality Check on the Raw Files
+# HPC environment conditions here
+# Quality check
+
+for f in *.fastq.gz; 
+do 
+        fastqc $f; 
+done
+
+multiqc .;
+
+
 # Shell script to trim reads
-#!/bin/bash
+# HPC environment conditions here
 # Trimmomatic
 mkdir trimlog
 mkdir trimmed
@@ -16,7 +28,7 @@ SLIDINGWINDOW:4:15 MINLEN:36
 done
 
 # Quality Check on the Trimmed Files
-#!/bin/bash
+# HPC environment conditions here
 # Quality check
 
 for f in *.fastq.gz; 
@@ -27,7 +39,7 @@ done
 multiqc .;
 
 # Read Quantification with Salmon
-#!/bin/bash
+# HPC environment conditions here
 # indexing the reference
 salmon index -t ensembl/Homo_sapiens.GRCh37.cdna.all.fa \
 -i ensembl/refcDNA_index

@@ -1,4 +1,3 @@
-```{r}
 ## Load in the library
 library(edgeR)
 # read in count dataset
@@ -69,4 +68,3 @@ Sig_0.01<-subset(results_edgeR$table, results_edgeR$table$PValue<=0.01)
 Bonf<-p.adjust(Sig_0.01$PValue,method="bonferroni")
 Sig_0.01<-cbind(Sig_0.01,Bonf)
 Sig_0.01 <- Sig_0.01[order(Sig_0.01$Bonf),]
-```

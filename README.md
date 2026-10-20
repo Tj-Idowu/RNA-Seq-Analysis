@@ -44,7 +44,7 @@ BiocManager::install("edgeR")
 
 ## How it works
 
-### Step 1
+### Step 1: Quality Control and Read Quantification
 
 The bash script runs on a SLURM HPC cluster (make sure to edit the conditions before running or change if using a different environment).
 
@@ -74,7 +74,7 @@ Repeat FastQC and MultiQC on trimmed reads. Go through the report to check read 
 - Build an index file for Salmon from the GRCh37 Ensembl reference
 - Quantify each trimmed read against the index with library type detection, GC and sequence bias correction, and equivalence class output.
 
-### 2. Differential Expression
+### Step 2: Differential Expression
 Salmon creates a `quant.sf` file for each sample. For the differential expression analysis, all the sample outputs need to be in a single file. Save the single concatenated count matrix into a .csv file so that it does not need to be made again for subsequent reanalysis.
 
 #### 1. Load and relabel the data

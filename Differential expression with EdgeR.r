@@ -65,7 +65,7 @@ cpm_log <- cpm(data_clean, log = TRUE)
 hist(cpm_log)
 heatmap(cor(cpm_log))
 
-# Pricipal Component Analysis, black for normal and red for tumour cells
+# Principal Component Analysis, black for normal and red for tumour cells
 pca <- prcomp(t(cpm_log), scale. = TRUE)
 plot(pca$x[, 1], pca$x[, 2], type = "n", xlab = "PC1", ylab = "PC2")
 text(pca$x[, 1], pca$x[, 2], labels = colnames(cpm_log),col = as.integer(tissue))
@@ -83,7 +83,7 @@ y <- estimateDisp(y, design)
 sqrt(y$common.dispersion) # biological coefficient of variation
 plotBCV(y)
 
-# DE with Fisher's exact-ish test
+# DE with EdgeR quasi-likelihood F-test (recommended by edgeR)
 fit <- glmQLFit(y, design)
 qlf <- glmQLFTest(fit, coef = "tissueT")
 results_edgeR <- topTags(qlf, n = Inf, sort.by = "none")$table

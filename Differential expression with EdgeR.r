@@ -6,8 +6,8 @@ library(edgeR)
 # Path to input files
 input_dir <- "/absolute/path/to/salmon/output"
 ref_fasta <- "/absolute/path/to/ensembl/Homo_sapiens.GRCh37.cdna.all.fa"
-sample_sheet <- "sample_sheet.csv"
-counts_file <- "hervk_samples.csv"
+sample_sheet <- "/absolute/path/to/sample_sheet.csv"
+counts_file <- "/absolute/path/to/hervk_samples.csv"
 
 # Input Sample Sheet
 # "sample" column is the output folder name for that sample, patient is numbered 1-14, tissues and N "normal" or T "tumour"

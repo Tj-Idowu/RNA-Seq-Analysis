@@ -5,7 +5,7 @@ The pipeline uses two paired-end RNA sequencing reads from matched normal and tu
 It is a two-step process.
 
 1. **`quality_check_and_analysis.sh`**, a Bash script run on an HPC cluster, does QC with FastQC, adapter and quality trimming with Trimmomatic, and transcript quantification with Salmon.
-2. **`Differential expression with EdgeR.r`**, an R script, does filtering, normalisation, produces exploratory plots and differential expression tests on the counts produced in the first step.
+2. **`Differential expression with EdgeR.r`**, an R script, does filtering, normalisation, data exploration and differential expression tests on the counts produced in the first step.
 
 ---
 
@@ -29,10 +29,9 @@ It is a two-step process.
   installed
 
 ```r
+install.packages("tidyverse")
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
-BiocManager::install("edgeR")
-if (!require("BiocManager", quietly = TRUE)) install.packages("BiocManager")
-BiocManager::install("tximport")
+BiocManager::install(c("edgeR", "tximport"))
 ```
 
 ---

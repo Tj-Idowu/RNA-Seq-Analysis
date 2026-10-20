@@ -31,6 +31,8 @@ It is a two-step process.
 ```r
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 BiocManager::install("edgeR")
+if (!require("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+BiocManager::install("tximport")
 ```
 
 ---
